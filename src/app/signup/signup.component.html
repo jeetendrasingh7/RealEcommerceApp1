@@ -1,23 +1,14 @@
-<div class="main-footer">
-    <div class="container">
-        <div class="row">
-            <div class="footer-top clearfix">
-              
-                <div class="col-md-6 col-sm-6">
-                    <div class="form-box">
-                        <input type="text" placeholder="Enter yopur e-mail" [(ngModel)]="email"  />
-                        <!-- <button>Continue</button> -->
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="form-box">
-                        <input type="text" placeholder="Enter yopur name" [(ngModel)]="name" />
-                        <button (click)="signin()"  >Continue</button>
-                    </div>
-                </div>
-                
-                </div>
-                </div>
-                </div>
-                </div>
-                
+<div class="container"  [formGroup]="signUpForm"   >
+    <div class="form-box">
+      <input type="email" class="form-control" name="" id=""  placeholder="Enter Your Email" formControlName="email"  >
+    </div>
+    <div class="form-box">
+        <input type="text"  class="form-control" name="" id=""  placeholder="Enter Your Name" formControlName="name" >
+      </div>
+      <div class="form-box">
+        <input type="password"  class="form-control" name="" id=""  placeholder="Enter Your Password" formControlName="password" >
+      </div>
+      <div class="form-box">
+        <button class="btn btn-primary" (click)="signin(signUpForm.value)"  >Submit</button>
+      </div>
+</div>
